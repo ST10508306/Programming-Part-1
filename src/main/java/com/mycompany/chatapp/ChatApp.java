@@ -13,6 +13,19 @@ public class ChatApp {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        System.out.println("Hi there, enter username");
+        String username = input.nextLine();
         
+        System.out.println("Hi there, please enter password ");
+        String password = input.nextLine();
+        
+        System.out.println("Hi there, please enter cellphone number");
+        int cellPhoneNumber = input.nextInt();
+        
+        System.out.println("Hi ther, please enter first name");
+        String firstname = input.nextLine();
+        
+        System.out.println("hi there, pease enter last name");
+        String lastname = input.nextLine();
     }
 }
