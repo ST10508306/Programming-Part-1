@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.chatapp;
-import java.util.Scanner;
+
 
 
 
@@ -77,23 +77,17 @@ public class Login {
          
      } 
         
-        public boolean loginUser(String inputUsername, String inputPassword, String storedUsername, String storedPassword){
-            if (inputUsername.equals(storedUsername) && inputPassword.equals(storedPassword)){
-                return true;
-            }else{
-                return false;
-            }
+        public boolean loginUser(String inputUsername, String inputPassword){
+            if (inputUsername.equals(this.username) && inputPassword.equals(this.password)){
+                return inputUsername.equals(this.username) && inputPassword.equals(this.password);
         }
         
         
-        public String returnLoginSatus(){
-            if (loginUser(inputUsername) == true){
-                return "Welcome <first name>, <last name> it is great to see you again";
-            }
-            if{ (loginUser() == false){
-                return "username or password incorrect, please try again";
-            }
-                
+        public String returnLoginStatus(boolean isLoggedIn){
+            if (isLoggedIn){
+                return "Welcome" + this.firstname + " " + this.lastname + "it is great to see you again";
+            }else{
+                return "Username or passwpord incorrect, please try again.";
             }
                 
         }

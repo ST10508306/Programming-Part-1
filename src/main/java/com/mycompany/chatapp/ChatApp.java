@@ -3,6 +3,7 @@
  */
 
 package com.mycompany.chatapp;
+import java.util.Scanner;
 
 /**
  *
@@ -11,6 +12,7 @@ package com.mycompany.chatapp;
 public class ChatApp {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Scanner input = new Scanner(System.in);
+        
     }
 }
