@@ -13,6 +13,8 @@ public class ChatApp {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        Login obj = new Login();
+        
         System.out.println("Hi there, enter username");
         String username = input.nextLine();
         
@@ -27,5 +29,14 @@ public class ChatApp {
         
         System.out.println("hi there, pease enter last name");
         String lastname = input.nextLine();
+        
+        String messageResult = obj.setupAccount(InputUsername, InputPassword, InputCellphonenumber,InputFirstname, InputLastname);
+        
+        
+        System.out.println("Login attempts");
+        System.out.println("messageResult");
+        
+        
+        
     }
 }
