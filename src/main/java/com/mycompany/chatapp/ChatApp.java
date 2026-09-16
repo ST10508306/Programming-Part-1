@@ -22,7 +22,7 @@ public class ChatApp {
         String password = input.nextLine();
         
         System.out.println("Hi there, please enter cellphone number");
-        int cellPhoneNumber = input.nextInt();
+        String cellPhoneNumber = input.nextLine();
         
         System.out.println("Hi ther, please enter first name");
         String firstname = input.nextLine();
@@ -30,12 +30,23 @@ public class ChatApp {
         System.out.println("hi there, pease enter last name");
         String lastname = input.nextLine();
         
-        String messageResult = obj.setupAccount(InputUsername, InputPassword, InputCellphonenumber,InputFirstname, InputLastname);
+        String messageResult = obj.registerUser(username, password, cellPhoneNumber);
         
+        System.out.println(messageResult);
         
-        System.out.println("Login attempts");
-        System.out.println("messageResult");
+        if (messageResult.equals("Username successfully captured.")){
+            System.out.println("\n--- LOGIN Attempt ---");
+            System.out.println("Enter username:");
+            String loginUser = input.nextLine();
+            
+            System.out.println("Enter password:");
+            String loginPass = input.nextLine();
+            
+            boolean isLoggedIn = obj.loginUser(loginUser, loginPass);
+            System.out.println(obj.returnLoginStatus(isLoggedIn));
+        }
         
+        input.close();
         
         
     }
