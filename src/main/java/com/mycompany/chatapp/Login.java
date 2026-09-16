@@ -78,9 +78,9 @@ public class Login {
      } 
         
         public boolean loginUser(String inputUsername, String inputPassword){
-            if (inputUsername.equals(this.username) && inputPassword.equals(this.password)){
-                return inputUsername.equals(this.username) && inputPassword.equals(this.password);
+            return inputUsername.equals(this.username) && inputPassword.equals(this.password);
         }
+        
         
         
         public String returnLoginStatus(boolean isLoggedIn){
