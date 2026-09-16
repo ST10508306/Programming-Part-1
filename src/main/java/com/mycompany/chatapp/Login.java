@@ -84,6 +84,19 @@ public class Login {
                 return false;
             }
         }
+        
+        
+        public String returnLoginSatus(){
+            if (loginUser(inputUsername) == true){
+                return "Welcome <first name>, <last name> it is great to see you again";
+            }
+            if{ (loginUser() == false){
+                return "username or password incorrect, please try again";
+            }
+                
+            }
+                
+        }
             
         
         
