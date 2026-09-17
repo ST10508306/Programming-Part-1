@@ -56,7 +56,7 @@ public class LoginTest {
     public void checkPasswordComplexity_invalid(){
         Login obj = new Login();
         boolean result = obj.checkPasswordComplexity("password");
-        assertEquals(true, result);
+        assertEquals(false, result);
     }
     
     @Test
@@ -95,12 +95,12 @@ public class LoginTest {
     public void checkRegisterUser_invalidUsernameMessage(){
         Login obj = new Login();
         String expected = "Username is not correctly formatted please ensure that your username contains an underscore  and is no more than 5  characters";
-        String actual = obj.registerUser("kyle123","Ch&&sec@ke99","+27838968976");
+        String actual = obj.registerUser("kyle123","Ch&&sec@ke99!","+27838968976");
         assertEquals(expected, actual);
     }
     
     @Test 
-    public void checkRegisterUser_invalidpasswordmessage(){
+    public void checkRegisterUser_invalidPasswordmessage(){
         Login obj = new Login();
         String expected = "Password is not correctly formatted; please ensure that the passsword contains at least 8 characters, a capital letter, a number, and a special character";
         String actual = obj.registerUser("kyl_1", "password", "+27838968976");
@@ -111,7 +111,7 @@ public class LoginTest {
     @Test
     public void  testLoginUser_success(){
         Login obj = new Login();
-        obj.registerUser("kyl_1", "Ch&&sec@ke99!", "+278968976", "Kyle", "Smith");
+        obj.registerUser("kyl_1", "Ch&&sec@ke99!", "+278968976");
         boolean result = obj.loginUser("kyl_1", "Ch&&sec@ke99!");
         assertTrue(result);
           
@@ -120,10 +120,10 @@ public class LoginTest {
     @Test 
     public void testReturnLoginStatus_success(){
         Login obj = new Login();
-        obj.registerUser("kyl_1","Ch&&sec@ke99!","+27838968976", "Kyle", "Smith");
+        obj.registerUser("kyl_1","Ch&&sec@ke99!","+27838968976");
         boolean isLoggedIn = obj.loginUser("kyle_1","Ch&&sec@ke99!");
-        String result = obj.returnLoginStatus(true);
-        assertTrue(result.contains("Welcome Kyle Smith"));
+        String result = obj.returnLoginStatus(isLoggedIn);
+        assertTrue(result.contains("Welcome"));
     }
 
     

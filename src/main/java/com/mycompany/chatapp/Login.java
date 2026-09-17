@@ -70,13 +70,18 @@ public class Login {
          
      } 
         
+        public  String registerUser(String username, String password, String cellPhoneNumber){
+            return registerUser(username, password, cellPhoneNumber, "", "");
+        }
+        
+        //Verifying login credentials
         public boolean loginUser(String inputUsername, String inputPassword){
-            return inputUsername.equals(this.username) && inputUsername.equals(this.username)
+            return  inputUsername != null && inputUsername.equals(this.username)
                     && inputPassword != null && inputPassword.equals(this.password);
         }
         
         
-        
+        //return message of of login verification
         public String returnLoginStatus(boolean isLoggedIn){
             if (isLoggedIn){
                 return "Welcome" + this.firstname + " " + this.lastname + "it is great to see you again";
@@ -85,10 +90,7 @@ public class Login {
             }
                 
         }
-            
-        
-        
-     
+              
 }
 
         
