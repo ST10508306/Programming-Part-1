@@ -46,11 +46,11 @@ public class Login {
            
             
             if (!checkUserName(username)){
-                return "Username is not formatted correctly; please ensure thet username contains an underscore and is no more than five characters in length";
+                return "Username is not correctly formatted; please ensure thet username contains an underscore and is no more than 5 characters";
                 
         }
             if (!checkPasswordComplexity(password)){
-                return "Password is not formatted correctly; please ensure that password has atleast 8 characters, a capital letter, a number and a special character";
+                return "Password is not formatted correctly; please ensure that password has atleast 8 characters, a capital letter, a number, and a special character";
                 
             }
             

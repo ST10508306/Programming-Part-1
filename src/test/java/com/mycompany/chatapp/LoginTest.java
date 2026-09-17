@@ -94,7 +94,7 @@ public class LoginTest {
     @Test
     public void checkRegisterUser_invalidUsernameMessage(){
         Login obj = new Login();
-        String expected = "Username is not correctly formatted please ensure that your username contains an underscore  and is no more than 5  characters";
+        String expected = "Username is not correctly formatted; please ensure that your username contains an underscore  and is no more than 5  characters";
         String actual = obj.registerUser("kyle123","Ch&&sec@ke99!","+27838968976");
         assertEquals(expected, actual);
     }
@@ -102,7 +102,7 @@ public class LoginTest {
     @Test 
     public void checkRegisterUser_invalidPasswordmessage(){
         Login obj = new Login();
-        String expected = "Password is not correctly formatted; please ensure that the passsword contains at least 8 characters, a capital letter, a number, and a special character";
+        String expected = "Password is not formatted correctly; please ensure that the passsword contains at least 8 characters, a capital letter, a number, and a special character";
         String actual = obj.registerUser("kyl_1", "password", "+27838968976");
         assertEquals(expected, actual);
         
