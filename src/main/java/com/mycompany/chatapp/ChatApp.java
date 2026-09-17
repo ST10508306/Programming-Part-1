@@ -15,19 +15,19 @@ public class ChatApp {
         Scanner input = new Scanner(System.in);
         Login obj = new Login();
         
-        System.out.println("Hi there, enter username");
+        System.out.println("Hi there, enter first name");
         String username = input.nextLine();
         
-        System.out.println("Hi there, please enter password ");
+        System.out.println("Hi there, please enter last name");
         String password = input.nextLine();
         
-        System.out.println("Hi there, please enter cellphone number");
+        System.out.println("Hi there, please enter username");
         String cellPhoneNumber = input.nextLine();
         
-        System.out.println("Hi ther, please enter first name");
+        System.out.println("Hi ther, please enter password");
         String firstname = input.nextLine();
         
-        System.out.println("hi there, pease enter last name");
+        System.out.println("hi there, pease enter cellphone nuber");
         String lastname = input.nextLine();
         
         String messageResult = obj.registerUser(username,password, cellPhoneNumber,firstname, lastname);
