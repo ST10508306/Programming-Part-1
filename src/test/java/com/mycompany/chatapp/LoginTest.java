@@ -16,7 +16,7 @@ public class LoginTest {
     public LoginTest() {
     }
 
-    @Test
+    @Test// checcking if username is valid
     public void checkUsername_valid(){
         Login obj = new Login();
         boolean result = obj.checkUserName("kyl_1");
@@ -24,27 +24,27 @@ public class LoginTest {
                 
     }
     
-    @Test
+    @Test// checking if username is invalid
     public void checkUsername_invalid(){
         Login obj = new Login();
         boolean result = obj. checkUserName("kyle!!!!!!");
         assertEquals(false , result);
     }
     
-    @Test
+    @Test// checking if username name has no underscore
     public void checkUsername_noUnderscore(){
         Login obj = new Login();
         boolean result = obj.checkUserName("kyle1");
         assertEquals(false, result);
     }
     
-    @Test
+    @Test//checking username if it has 5 characters
     public void checkUsername_exactFiveCharacters(){
         Login obj = new Login ();
         boolean result = obj.checkUserName("abc_1");
         assertEquals(true, result);
     }
-    @Test
+    @Test//checking if password is correctt
     public void checkPasswordComplexitity_valid(){
         Login obj = new Login();
         boolean result = obj.checkPasswordComplexity("Ch&&sec@ke99!");
@@ -52,14 +52,14 @@ public class LoginTest {
     }
     
     
-    @Test
+    @Test//checking if password is incorrect
     public void checkPasswordComplexity_invalid(){
         Login obj = new Login();
         boolean result = obj.checkPasswordComplexity("password");
         assertEquals(false, result);
     }
     
-    @Test
+    @Test//checking if password has a special character
     public void checkPassword_noSpecialCharacter(){
         Login obj = new Login();
         boolean result = obj.checkPasswordComplexity("Password123");
@@ -67,14 +67,14 @@ public class LoginTest {
         
     }
     
-    @Test
+    @Test// checking if password has no special character
     public void checkPassword_nocapital(){
         Login obj = new Login();
         Boolean result = obj.checkPasswordComplexity("password@123");
         assertEquals(false, result);
     }
     
-    @Test
+    @Test//checking when cellphone number is vaild
     public void checkCellPhoneNumber_valid(){
         Login obj = new Login();
         boolean result = obj.checkCellPhoneNumber("+27838968976");
@@ -83,7 +83,7 @@ public class LoginTest {
                 
     }
     
-    @Test
+    @Test//checking when cellphone number is not valid
     public void checkCellPhoneNumber_invalid(){
         Login obj = new Login();
         boolean result = obj.checkCellPhoneNumber("08966553");
@@ -91,7 +91,7 @@ public class LoginTest {
         
     }
     
-    @Test
+    @Test// register user invalid username message
     public void checkRegisterUser_invalidUsernameMessage(){
         Login obj = new Login();
         String expected = "Username is not correctly formatted; please ensure thet username contains an underscore and is no more than 5 characters";
@@ -99,7 +99,7 @@ public class LoginTest {
         assertEquals(expected, actual);
     }
     
-    @Test 
+    @Test // register user invalid password message
     public void checkRegisterUser_invalidPasswordmessage(){
         Login obj = new Login();
         String expected = "Password is not formatted correctly; please ensure that password has atleast 8 characters, a capital letter, a number, and a special character";
@@ -108,7 +108,7 @@ public class LoginTest {
         
     }
     
-    @Test
+    @Test// testing when user logs in
     public void  testLoginUser_success(){
         Login obj = new Login();
         obj.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976");
@@ -117,7 +117,7 @@ public class LoginTest {
           
     }
     
-    @Test 
+    @Test // the status of when user logged in
     public void testReturnLoginStatus_success(){
         Login obj = new Login();
         obj.registerUser("kyl_1","Ch&&sec@ke99!","+27838968976");
