@@ -19,12 +19,12 @@ public class Login {
     private String firstname;
     private String lastname;
     
-    
+    //Validation Check
     //check username
     public boolean checkUserName(String username){
         return username != null && username.contains("_") && username.length() <= 5;
         }
-       
+     //check password complexity  
     public boolean checkPasswordComplexity(String password){
         if (password ==  null) return false;
         boolean hasMinLength = password.length() >=8;
@@ -42,6 +42,7 @@ public class Login {
                 
             }
         
+        // user registering method
         public String registerUser(String username, String password, String cellPhoneNumber, String firstname, String lastname){
            
             
@@ -69,7 +70,7 @@ public class Login {
             
          
      } 
-        
+        // overloaded registerUser in case names are omitted
         public  String registerUser(String username, String password, String cellPhoneNumber){
             return registerUser(username, password, cellPhoneNumber, "", "");
         }

@@ -15,6 +15,7 @@ public class ChatApp {
         Scanner input = new Scanner(System.in);
         Login obj = new Login();
         
+        //prompting the user to enter their details
         System.out.println("Hi there, enter username");
         String username = input.nextLine();
         
@@ -33,6 +34,8 @@ public class ChatApp {
         String messageResult = obj.registerUser(username,password, cellPhoneNumber,firstname, lastname);
         
         System.out.println(messageResult);
+        
+        
         
         if (messageResult.equals("Username successfully captured.")){
             System.out.println("\n--- LOGIN Attempt ---");
