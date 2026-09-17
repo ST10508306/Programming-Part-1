@@ -30,7 +30,7 @@ public class ChatApp {
         System.out.println("hi there, pease enter last name");
         String lastname = input.nextLine();
         
-        String messageResult = obj.registerUser(username, password, cellPhoneNumber);
+        String messageResult = obj.registerUser(username,password, cellPhoneNumber,firstname, lastname);
         
         System.out.println(messageResult);
         

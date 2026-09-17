@@ -28,7 +28,7 @@ public class LoginTest {
     public void checkUsername_invalid(){
         Login obj = new Login();
         boolean result = obj. checkUserName("kyle!!!!!!");
-        assertEquals(true , result);
+        assertEquals(false , result);
     }
     
     @Test
@@ -100,17 +100,18 @@ public class LoginTest {
     }
     
     @Test 
-    public void checkregisterUser_invalidpasswordmessage(){
+    public void checkRegisterUser_invalidpasswordmessage(){
         Login obj = new Login();
         String expected = "Password is not correctly formatted; please ensure that the passsword contains at least 8 characters, a capital letter, a number, and a special character";
         String actual = obj.registerUser("kyl_1", "password", "+27838968976");
+        assertEquals(expected, actual);
         
     }
     
     @Test
     public void  testLoginUser_success(){
         Login obj = new Login();
-        obj.registerUser("kyl_1", "Ch&&sec@ke99!", "+278968976");
+        obj.registerUser("kyl_1", "Ch&&sec@ke99!", "+278968976", "Kyle", "Smith");
         boolean result = obj.loginUser("kyl_1", "Ch&&sec@ke99!");
         assertTrue(result);
           
@@ -119,8 +120,10 @@ public class LoginTest {
     @Test 
     public void testReturnLoginStatus_success(){
         Login obj = new Login();
+        obj.registerUser("kyl_1","Ch&&sec@ke99!","+27838968976", "Kyle", "Smith");
+        boolean isLoggedIn = obj.loginUser("kyle_1","Ch&&sec@ke99!");
         String result = obj.returnLoginStatus(true);
-        assertTrue(result.contains("Welcome"));
+        assertTrue(result.contains("Welcome Kyle Smith"));
     }
 
     

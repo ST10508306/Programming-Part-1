@@ -24,10 +24,7 @@ public class Login {
     public boolean checkUserName(String username){
         return username != null && username.contains("_") && username.length() <= 5;
         }
-        
-    
-        
-        
+       
     public boolean checkPasswordComplexity(String password){
         if (password ==  null) return false;
         boolean hasMinLength = password.length() >=8;
@@ -44,32 +41,28 @@ public class Login {
             return cellPhoneNumber != null && cellPhoneNumber.matches("^\\+27\\d{9}$");
                 
             }
-            
-      
-            
-            
-            
         
-        
-        public String registerUser(String username, String password, String cellPhoneNumber){
+        public String registerUser(String username, String password, String cellPhoneNumber, String firstname, String lastname){
            
             
             if (!checkUserName(username)){
-                System.out.println("Username is not formatted correctly; please ensure thet username contains an underscore and is no more than five characters in length");
+                return "Username is not formatted correctly; please ensure thet username contains an underscore and is no more than five characters in length";
                 
         }
             if (!checkPasswordComplexity(password)){
-                System.out.println("Password is not formatted correctly; please ensure that password has atleast 8 characters, a capital letter, a number and a special character");
+                return "Password is not formatted correctly; please ensure that password has atleast 8 characters, a capital letter, a number and a special character";
                 
             }
             
             if (!checkCellPhoneNumber(cellPhoneNumber)){
-                System.out.println("Cell phone number incorrectly formatted or does not contain international code");
+                return "Cell phone number incorrectly formatted or does not contain international code";
             }
             
             this.username = username;
             this.password = password;
             this.cellPhoneNumber = cellPhoneNumber;
+            this.firstname = firstname;
+            this.lastname = lastname;
             
             return "Username successfully captured";
             
@@ -78,7 +71,8 @@ public class Login {
      } 
         
         public boolean loginUser(String inputUsername, String inputPassword){
-            return inputUsername.equals(this.username) && inputPassword.equals(this.password);
+            return inputUsername.equals(this.username) && inputUsername.equals(this.username)
+                    && inputPassword != null && inputPassword.equals(this.password);
         }
         
         
