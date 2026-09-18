@@ -36,7 +36,7 @@ public class ChatApp {
         System.out.println(messageResult);
         
         
-        
+        //decision when username is successfully captured
         if (messageResult.equals("Username successfully captured.")){
             System.out.println("\n--- LOGIN Attempt ---");
             System.out.println("Enter username:");
